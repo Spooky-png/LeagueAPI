@@ -1,0 +1,46 @@
+.hotStreak {
+	box-shadow:inset 0px 39px 0px -24px #ffa557;
+	background:linear-gradient(to bottom, #e09148 5%, #edb75a 100%);
+	background-color:#e09148;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #000000;
+}
+.hotStreak:hover {
+	background:linear-gradient(to bottom, #edb75a 5%, #e09148 100%);
+	background-color:#edb75a;
+}
+.hotStreak:active {
+	position:relative;
+	top:1px;
+}
+.coldStreak {
+	box-shadow:inset 0px 39px 0px -24px #5adced;
+	background-color:#75e3ff;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.coldStreak:hover {
+	background-color:#ffffff;
+}
+.coldStreak:active {
+	position:relative;
+	top:1px;
+}
+.holdthebar{
+width: 200px;

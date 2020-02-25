@@ -1,0 +1,10 @@
+
+.carousel-inner{
+	width: auto;
+	height: 600px;
+}
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+
