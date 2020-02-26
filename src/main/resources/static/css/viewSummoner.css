@@ -21,26 +21,26 @@
 	position:relative;
 	top:1px;
 }
-.coldStreak {
-	box-shadow:inset 0px 39px 0px -24px #5adced;
-	background-color:#75e3ff;
-	border-radius:4px;
-	border:1px solid #ffffff;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #b23e35;
-}
-.coldStreak:hover {
-	background-color:#ffffff;
-}
-.coldStreak:active {
-	position:relative;
-	top:1px;
-}
 .holdthebar{
-width: 200px;
+	width: 200px;
+}
+.currentMatch{
+	display: inline-block;
+	width: 600px;
+}
+.container-fluid{
+ display: inline-block;
+ }
+ .soloQueue{
+ display: inline-block;
+ }
+ .flexQueue{
+	 display: inline-block;
+ 	width: 300px;
+ }
+ .redteam{
+ color:#e34040;
+ }
+ .blueteam{
+ color:#40cae3;
+ }

@@ -1,5 +1,7 @@
 package com.spooky.league.controllers;
 
+import java.util.Iterator;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
@@ -18,12 +20,16 @@ public class LeagueController {
 	public LeagueController(LeagueService leagueService) {
 		this.leagueService = leagueService;
 	}
+	@RequestMapping("/")
+	public String dashboard(Model model) throws Exception{
+		return "dashboard.jsp";
+	}
 	@RequestMapping("/summoner{Name}")
 	public String getSummoner(@RequestParam("Name") String Name, Model model) throws Exception{
 
 		String url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 	    String Origin = "https://developer.riotgames.com";
-	    String token = "KEEEEEEEEEEEEY";
+	    String token = "KEEEEEEEEEEEEEY";
 	    String language = "en-US,en;q=0.9";
 	    String s = Name;
 	    
@@ -93,6 +99,169 @@ public class LeagueController {
 	    catch(Exception b) {
 	    	System.out.println("No Flex Queue info");
 	    }
+	    try {
+	    String url3 = "https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/" +summonerId;
+	    HttpResponse<JsonNode> response3 = Unirest.get(url3)
+	    	      .header("Origin", Origin)
+	    	      .header("X-Riot-Token", token)
+	    	      .header("Accept-Language", language)
+	    	      .asJson();
+	    JSONObject participantsObj = response3.getBody().getObject();
+	    String matchType = participantsObj.getString("gameMode");
+	    model.addAttribute("matchType", matchType);
+	    Long gameStart = participantsObj.getLong("gameStartTime");
+	    String date = new java.text.SimpleDateFormat("HH:mm:ss").format(new java.util.Date (gameStart));
+	    Long gameLength = participantsObj.getLong("gameLength");
+	    model.addAttribute("gameStart", date);
+	    int gameSeconds = (int) (gameLength % 60); //????? BRAIN NOT BIG ENOUGH
+	    int gameMinutes = (int) Math.floor(gameLength/60);
+	    model.addAttribute("gameMinutes", gameMinutes);
+	    model.addAttribute("gameSeconds", gameSeconds);
+	    JSONArray participants = participantsObj.getJSONArray("participants");
+	    JSONObject participant1 = participants.getJSONObject(0);
+	    Long participant1Champ = participant1.getLong("championId");
+	    String participant1Name = participant1.getString("summonerName");
+	    model.addAttribute("participant1Name",participant1Name);
+	    JSONObject participant2 = participants.getJSONObject(1);
+	    Long participant2Champ = participant2.getLong("championId");
+	    String participant2Name = participant2.getString("summonerName");
+	    model.addAttribute("participant2Name",participant2Name);
+	    JSONObject participant3 = participants.getJSONObject(2);
+	    Long participant3Champ = participant3.getLong("championId");
+	    String participant3Name = participant3.getString("summonerName");
+	    model.addAttribute("participant3Name",participant3Name);
+	    JSONObject participant4 = participants.getJSONObject(3);
+	    Long participant4Champ = participant4.getLong("championId");
+	    String participant4Name = participant4.getString("summonerName");
+	    model.addAttribute("participant4Name",participant4Name);
+	    JSONObject participant5 = participants.getJSONObject(4);
+	    Long participant5Champ = participant5.getLong("championId");
+	    String participant5Name = participant5.getString("summonerName");
+	    model.addAttribute("participant5Name",participant5Name);
+	    JSONObject participant6 = participants.getJSONObject(5);
+	    Long participant6Champ = participant6.getLong("championId");
+	    String participant6Name = participant6.getString("summonerName");
+	    model.addAttribute("participant6Name",participant6Name);
+	    JSONObject participant7 = participants.getJSONObject(6);
+	    Long participant7Champ = participant7.getLong("championId");
+	    String participant7Name = participant7.getString("summonerName");
+	    model.addAttribute("participant7Name",participant7Name);
+	    JSONObject participant8 = participants.getJSONObject(7);
+	    Long participant8Champ = participant8.getLong("championId");
+	    String participant8Name = participant8.getString("summonerName");
+	    model.addAttribute("participant8Name",participant8Name);
+	    JSONObject participant9 = participants.getJSONObject(8);
+	    Long participant9Champ = participant9.getLong("championId");
+	    String participant9Name = participant9.getString("summonerName");
+	    model.addAttribute("participant9Name",participant9Name);
+	    JSONObject participant10 = participants.getJSONObject(9);
+	    Long participant10Champ = participant10.getLong("championId");
+	    String participant10Name = participant10.getString("summonerName");
+	    model.addAttribute("participant10Name",participant10Name);
+	    String url6 = "http://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json";
+	    HttpResponse<JsonNode> response6 = Unirest.get(url6)
+	    	      .asJson();
+	    JSONObject gameChampsObj = response6.getBody().getObject();
+	    JSONObject dataObj = gameChampsObj.getJSONObject("data");
+	    Iterator<String> keys = dataObj.keys();
+	    while(keys.hasNext()) {
+	    	String keyVal = keys.next();
+	    	JSONObject champObj = dataObj.getJSONObject((String) keyVal);
+	    		if( champObj.getLong("key") == participant1Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant1Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant2Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant2Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant3Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant3Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant4Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant4Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant5Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant5Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant6Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant6Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant7Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant7Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant8Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant8Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant9Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant9Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == participant10Champ) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("participant10Champ", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    }
+	    }
+	    catch(Exception n) {
+	    	System.out.println("Not in game");
+	    	model.addAttribute("notingame", "Summoner not currently in a game.");
+	    }
+	    	String url4 = "https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/" +summonerId;
+	    HttpResponse<JsonNode> response4 = Unirest.get(url4)
+	    		  .header("Origin", Origin)
+	    	      .header("X-Riot-Token", token)
+	    	      .header("Accept-Language", language)
+	    	      .asJson();
+	    JSONArray getChampIdObj = response4.getBody().getArray();
+	    JSONObject favoriteChampId = getChampIdObj.getJSONObject(0);
+	    Long champId = favoriteChampId.getLong("championId");
+	    int masteryPoints = favoriteChampId.getInt("championPoints");
+	    int championLevel = favoriteChampId.getInt("championLevel");
+	    model.addAttribute("masteryPoints", masteryPoints);
+	    model.addAttribute("championLevel", championLevel);
+	    JSONObject favoriteChampId2 = getChampIdObj.getJSONObject(1);
+	    Long champId2 = favoriteChampId2.getLong("championId");
+	    int masteryPoints2 = favoriteChampId2.getInt("championPoints");
+	    int championLevel2 = favoriteChampId2.getInt("championLevel");
+	    model.addAttribute("masteryPoints2", masteryPoints2);
+	    model.addAttribute("championLevel2", championLevel2);
+	    JSONObject favoriteChampId3 = getChampIdObj.getJSONObject(2);
+	    Long champId3 = favoriteChampId3.getLong("championId");
+	    int masteryPoints3 = favoriteChampId3.getInt("championPoints");
+	    int championLevel3 = favoriteChampId3.getInt("championLevel");
+	    model.addAttribute("masteryPoints3", masteryPoints3);
+	    model.addAttribute("championLevel3", championLevel3);
+	    
+	    String url5 = "http://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json";
+	    HttpResponse<JsonNode> response5 = Unirest.get(url5)
+	    	      .asJson();
+	    JSONObject champsObj = response5.getBody().getObject();
+	    JSONObject dataObj = champsObj.getJSONObject("data");
+	    Iterator<String> keys = dataObj.keys();
+	    while(keys.hasNext()) {
+	    	String keyVal = keys.next();
+	    	JSONObject champObj = dataObj.getJSONObject((String) keyVal);
+	    		if( champObj.getLong("key") == champId) {
+	    	    	String champName = keyVal;
+	    	    	model.addAttribute("champPic", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName+".png");
+	    	}
+	    		if( champObj.getLong("key") == champId2) {
+	    	    	String champName2 = keyVal;
+	    	    	model.addAttribute("champPic2", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName2+".png");
+	    	}
+	    		if( champObj.getLong("key") == champId3) {
+	    	    	String champName3 = keyVal;
+	    	    	model.addAttribute("champPic3", "http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/" +champName3+".png");
+	    	}
+	    }
+	    
 	    return "viewSummoner.jsp";
 	}
 	@RequestMapping("/champion{Name}")

@@ -56,7 +56,7 @@
 					</c:when>
 					<c:otherwise><img
 							style='height: 100%; width: 100%; object-fit: contain'
-							src="${champSplash2}" class="d-block w-100" alt="${champSplash2}"></c:otherwise>
+							src="${champSplash2}" class="d-block w-100" alt="It wasn't my fault"></c:otherwise>
 				</c:choose>
 				<div class="carousel-caption d-none d-md-block">
 					<h5>${skins3}</h5>
@@ -88,6 +88,8 @@
 						value="${spellEName }" /></a></li>
 			<li class="nav-item"><a href="#content6" class="nav-link active"><c:out
 						value="${spellRName }" /></a></li>
+			<li class="nav-item"><a href="/" class="nav-link active"><c:out
+						value="Back to Search" /></a></li>
 		</ul>
 	</nav>
 	<div id="content1" class="container-fluid bg-secondary"
