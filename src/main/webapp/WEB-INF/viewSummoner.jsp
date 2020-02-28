@@ -254,7 +254,6 @@
 					</c:otherwise>
 				</c:choose>
 			</div>
-		</div>
 		<div class="currentMatch">
 			<c:choose>
 				<c:when test="${participant1Name == null}">
@@ -321,6 +320,7 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

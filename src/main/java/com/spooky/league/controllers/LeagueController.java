@@ -32,7 +32,7 @@ public class LeagueController {
 		try {
 			String url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 			String Origin = "https://developer.riotgames.com";
-			String token = "Keeeey";
+			String token = "KEeeeeyyyy";
 			String language = "en-US,en;q=0.9";
 			String s = Name;
 
@@ -294,7 +294,7 @@ public class LeagueController {
 		try {
 			String url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/";
 			String Origin = "https://developer.riotgames.com";
-			String token = "Keeey";
+			String token = "Keeeyyyyy";
 			String language = "en-US,en;q=0.9";
 			String s = Id;
 
@@ -383,39 +383,57 @@ public class LeagueController {
 				JSONObject participant2 = participants.getJSONObject(1);
 				Long participant2Champ = participant2.getLong("championId");
 				String participant2Name = participant2.getString("summonerName");
+				String participant2Id = participant2.getString("summonerId");
 				model.addAttribute("participant2Name", participant2Name);
+				model.addAttribute("participant2Id", participant2Id);
 				JSONObject participant3 = participants.getJSONObject(2);
 				Long participant3Champ = participant3.getLong("championId");
 				String participant3Name = participant3.getString("summonerName");
+				String participant3Id = participant3.getString("summonerId");
 				model.addAttribute("participant3Name", participant3Name);
+				model.addAttribute("participant3Id", participant3Id);
 				JSONObject participant4 = participants.getJSONObject(3);
 				Long participant4Champ = participant4.getLong("championId");
 				String participant4Name = participant4.getString("summonerName");
+				String participant4Id = participant4.getString("summonerId");
 				model.addAttribute("participant4Name", participant4Name);
+				model.addAttribute("participant4Id", participant4Id);
 				JSONObject participant5 = participants.getJSONObject(4);
 				Long participant5Champ = participant5.getLong("championId");
 				String participant5Name = participant5.getString("summonerName");
+				String participant5Id = participant5.getString("summonerId");
 				model.addAttribute("participant5Name", participant5Name);
+				model.addAttribute("participant5Id", participant5Id);
 				JSONObject participant6 = participants.getJSONObject(5);
 				Long participant6Champ = participant6.getLong("championId");
 				String participant6Name = participant6.getString("summonerName");
+				String participant6Id = participant6.getString("summonerId");
 				model.addAttribute("participant6Name", participant6Name);
+				model.addAttribute("participant6Id", participant6Id);
 				JSONObject participant7 = participants.getJSONObject(6);
 				Long participant7Champ = participant7.getLong("championId");
 				String participant7Name = participant7.getString("summonerName");
+				String participant7Id = participant7.getString("summonerId");
 				model.addAttribute("participant7Name", participant7Name);
+				model.addAttribute("participant7Id", participant7Id);
 				JSONObject participant8 = participants.getJSONObject(7);
 				Long participant8Champ = participant8.getLong("championId");
 				String participant8Name = participant8.getString("summonerName");
+				String participant8Id = participant8.getString("summonerId");
 				model.addAttribute("participant8Name", participant8Name);
+				model.addAttribute("participant8Id", participant8Id);
 				JSONObject participant9 = participants.getJSONObject(8);
 				Long participant9Champ = participant9.getLong("championId");
 				String participant9Name = participant9.getString("summonerName");
+				String participant9Id = participant9.getString("summonerId");
 				model.addAttribute("participant9Name", participant9Name);
+				model.addAttribute("participant9Id", participant9Id);
 				JSONObject participant10 = participants.getJSONObject(9);
 				Long participant10Champ = participant10.getLong("championId");
 				String participant10Name = participant10.getString("summonerName");
+				String participant10Id = participant10.getString("summonerId");
 				model.addAttribute("participant10Name", participant10Name);
+				model.addAttribute("participant10Id", participant10Id);
 				String url6 = "http://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json";
 				HttpResponse<JsonNode> response6 = Unirest.get(url6).asJson();
 				JSONObject gameChampsObj = response6.getBody().getObject();
@@ -533,12 +551,20 @@ public class LeagueController {
 
 		return "viewSummoner.jsp";
 	}
+	@RequestMapping("/championName{Name}")
+	public String getChamp2(@RequestParam("Name") String Name, Model model) throws Exception {
+		String n = Name;
+		String s = n.replaceAll("\\s", "");
+		return "redirect:/champion?Name="+s;
+	}
 
 	@RequestMapping("/champion{Name}")
 	public String getChamp(@RequestParam("Name") String Name, Model model) throws Exception {
 
 		String url = "http://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion/";
-		String s = Name;
+		String n = Name;
+		String s = n.replaceAll("\\s", "");
+		System.out.println(s);
 
 		try {
 			HttpResponse<JsonNode> response = Unirest.get(url + s + ".json").asJson();
@@ -546,6 +572,8 @@ public class LeagueController {
 			JSONObject dataObj = myObj.getJSONObject("data");
 			JSONObject champObj = dataObj.getJSONObject(Name);
 			String name = champObj.getString("id");
+			String skinsName = champObj.getString("name");
+			model.addAttribute("skins", skinsName);
 			String title = champObj.getString("title");
 			String lore = champObj.getString("lore");
 			JSONArray abilities = champObj.getJSONArray("spells");

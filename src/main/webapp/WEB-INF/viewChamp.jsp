@@ -37,7 +37,7 @@
 				<img style='height: 100%; width: 100%; object-fit: contain'
 					src="${champSplash}" class="d-block w-100" alt="${champSplash}">
 				<div class="carousel-caption d-none d-md-block">
-					<h5>${name}</h5>
+					<h5>${skins}</h5>
 					<p>${tip1}</p>
 				</div>
 			</div>

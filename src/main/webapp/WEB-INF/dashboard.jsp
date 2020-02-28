@@ -28,7 +28,7 @@
 		<div class="container-fluid">
 			<h1>LeagueSpy</h1>
 			<div class="championSearch">
-				<form id="championSearch" action="/champion{Name}">
+				<form id="championSearch" action="/championName{Name}">
 					<input type="text" name="Name" placeholder="Search a champion">
 					<button class="myButton" type="submit">Search Champions</button>
 				</form>
