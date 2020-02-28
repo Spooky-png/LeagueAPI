@@ -97,40 +97,40 @@
 	</nav>
 	<div id="content1" class="container-fluid bg-secondary"
 		style="padding-top: 20px; padding-bottom: 20px;">
-		<h1>Lore</h1>
+		<h1>${skins}'s Lore</h1>
 	</div>
 	<div id="content2" class="container-fluid"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>
-			<img src="${passiveImagePic}" alt="${passiveImagePic}" />
+			<img src="${passiveImagePic}" alt="${passiveImagePic}" />Passive: 
 			<c:out value="${passiveName }" />
 		</h1>
 	</div>
 	<div id="content3" class="container-fluid bg-secondary"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>
-			<img src="${spellQImagePic}" alt="${spellQImagePic}" />
+			<img src="${spellQImagePic}" alt="${spellQImagePic}" />Q: 
 			<c:out value="${spellQName }" />
 		</h1>
 	</div>
 	<div id="content4" class="container-fluid"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>
-			<img src="${spellWImagePic}" alt="${spellWImagePic}" />
+			<img src="${spellWImagePic}" alt="${spellWImagePic}" />W: 
 			<c:out value="${spellWName }" />
 		</h1>
 	</div>
 	<div id="content5" class="container-fluid bg-secondary"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>
-			<img src="${spellEImagePic}" alt="${spellEImagePic}" />
+			<img src="${spellEImagePic}" alt="${spellEImagePic}" />E: 
 			<c:out value="${spellEName }" />
 		</h1>
 	</div>
 	<div id="content6" class="container-fluid"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>
-			<img src="${spellRImagePic}" alt="${spellRImagePic}" />
+			<img src="${spellRImagePic}" alt="${spellRImagePic}" />R: 
 			<c:out value="${spellRName }" />
 		</h1>
 	</div>

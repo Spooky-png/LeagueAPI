@@ -32,7 +32,7 @@ public class LeagueController {
 		try {
 			String url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 			String Origin = "https://developer.riotgames.com";
-			String token = "KEeeeeyyyy";
+			String token = "KEEEEEEEEEY";
 			String language = "en-US,en;q=0.9";
 			String s = Name;
 
@@ -294,7 +294,7 @@ public class LeagueController {
 		try {
 			String url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/";
 			String Origin = "https://developer.riotgames.com";
-			String token = "Keeeyyyyy";
+			String token = "KEEEEEEEEEY";
 			String language = "en-US,en;q=0.9";
 			String s = Id;
 
@@ -564,7 +564,6 @@ public class LeagueController {
 		String url = "http://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion/";
 		String n = Name;
 		String s = n.replaceAll("\\s", "");
-		System.out.println(s);
 
 		try {
 			HttpResponse<JsonNode> response = Unirest.get(url + s + ".json").asJson();

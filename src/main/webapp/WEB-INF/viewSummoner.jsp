@@ -45,6 +45,7 @@
 					<img style='height: 90px; width: 90px;' src="${champPic }"
 						alt="${champPic }">
 					<c:choose>
+					<c:when test="${championLevel < 4 }"> | ${masteryPoints } Mastery Points</c:when>
 						<c:when test="${championLevel == 4 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/b6/Champion_Mastery_Level_4_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041829"
@@ -65,6 +66,7 @@
 					<img style='height: 90px; width: 90px;' src="${champPic2 }"
 						alt="${champPic2 }">
 					<c:choose>
+					<c:when test="${championLevel2 < 4 }"> | ${masteryPoints2 } Mastery Points</c:when>
 						<c:when test="${championLevel2 == 4 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/b6/Champion_Mastery_Level_4_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041829"
@@ -85,7 +87,8 @@
 					<img style='height: 90px; width: 90px;' src="${champPic3 }"
 						alt="${champPic3}">
 					<c:choose>
-						<c:when test="${championLevel3 == 4 }">
+					<c:when test="${championLevel3 < 4 }"> | ${masteryPoints3 } Mastery Points</c:when>
+						<c:when test="${championLevel3 == 4 }"> 
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/b6/Champion_Mastery_Level_4_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041829"
 								alt="bloop">| ${masteryPoints3 } Mastery Points </c:when>
