@@ -7,4 +7,9 @@
     top: 0;
     bottom: auto;
 }
-
+h1{
+	color: darkred;
+}
+#content2, #content4, #content6{
+	background-color: #605d6c;
+}

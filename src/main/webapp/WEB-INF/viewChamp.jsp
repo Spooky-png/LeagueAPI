@@ -25,6 +25,7 @@
 <title>${name}</title>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
 	<div id="carouselCaptions" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carouselCaption1" data-slide-to="0" class="active"></li>
@@ -54,9 +55,11 @@
 						<img style='height: 100%; width: 100%; object-fit: contain'
 							src="${champSplash}" class="d-block w-100" alt="${champSplash}">
 					</c:when>
-					<c:otherwise><img
-							style='height: 100%; width: 100%; object-fit: contain'
-							src="${champSplash2}" class="d-block w-100" alt="It wasn't my fault"></c:otherwise>
+					<c:otherwise>
+						<img style='height: 100%; width: 100%; object-fit: contain'
+							src="${champSplash2}" class="d-block w-100"
+							alt="It wasn't my fault">
+					</c:otherwise>
 				</c:choose>
 				<div class="carousel-caption d-none d-md-block">
 					<h5>${skins3}</h5>
@@ -95,19 +98,13 @@
 	<div id="content1" class="container-fluid bg-secondary"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>Lore</h1>
-		<p>
-			<c:out value="${lore}" />
-		</p>
 	</div>
-	<div id="content2" class="container-fluid bg-dark"
+	<div id="content2" class="container-fluid"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>
 			<img src="${passiveImagePic}" alt="${passiveImagePic}" />
 			<c:out value="${passiveName }" />
 		</h1>
-		<p>
-			<c:out value="${passiveDescription }" />
-		</p>
 	</div>
 	<div id="content3" class="container-fluid bg-secondary"
 		style="padding-top: 20px; padding-bottom: 20px;">
@@ -115,19 +112,13 @@
 			<img src="${spellQImagePic}" alt="${spellQImagePic}" />
 			<c:out value="${spellQName }" />
 		</h1>
-		<p>
-			<c:out value="${spellQDescription }" />
-		</p>
 	</div>
-	<div id="content4" class="container-fluid bg-dark"
+	<div id="content4" class="container-fluid"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>
 			<img src="${spellWImagePic}" alt="${spellWImagePic}" />
 			<c:out value="${spellWName }" />
 		</h1>
-		<p>
-			<c:out value="${spellWDescription }" />
-		</p>
 	</div>
 	<div id="content5" class="container-fluid bg-secondary"
 		style="padding-top: 20px; padding-bottom: 20px;">
@@ -135,19 +126,19 @@
 			<img src="${spellEImagePic}" alt="${spellEImagePic}" />
 			<c:out value="${spellEName }" />
 		</h1>
-		<p>
-			<c:out value="${spellEDescription }" />
-		</p>
 	</div>
-	<div id="content6" class="container-fluid bg-dark"
+	<div id="content6" class="container-fluid"
 		style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>
 			<img src="${spellRImagePic}" alt="${spellRImagePic}" />
 			<c:out value="${spellRName }" />
 		</h1>
-		<p>
-			<c:out value="${spellRDescription }" />
-		</p>
 	</div>
+	<script>$('#content1').append("${lore}");
+	$('#content2').append("${passiveDescription}");
+	$('#content3').append("${spellQDescription}");
+	$('#content4').append("${spellWDescription}");
+	$('#content5').append("${spellEDescription}");
+	$('#content6').append("${spellRDescription}");</script>
 </body>
 </html>

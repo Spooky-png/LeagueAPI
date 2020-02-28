@@ -1,46 +1,80 @@
 .hotStreak {
-	box-shadow:inset 0px 39px 0px -24px #ffa557;
-	background:linear-gradient(to bottom, #e09148 5%, #edb75a 100%);
-	background-color:#e09148;
-	border-radius:4px;
-	border:1px solid #ffffff;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #000000;
+	box-shadow: inset 0px 39px 0px -24px #ffa557;
+	background: linear-gradient(to bottom, #e09148 5%, #edb75a 100%);
+	background-color: #e09148;
+	border-radius: 4px;
+	border: 1px solid #ffffff;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	padding: 6px 15px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #000000;
 }
+
 .hotStreak:hover {
-	background:linear-gradient(to bottom, #edb75a 5%, #e09148 100%);
-	background-color:#edb75a;
+	background: linear-gradient(to bottom, #edb75a 5%, #e09148 100%);
+	background-color: #edb75a;
 }
+
 .hotStreak:active {
-	position:relative;
-	top:1px;
+	position: relative;
+	top: 1px;
 }
-.holdthebar{
+
+.holdthebar {
 	width: 200px;
 }
-.currentMatch{
+
+.currentMatch {
 	display: inline-block;
+	border-radius: 20px;
+	background-color: #868686;
+	border: #343a40 7px solid;
 	width: 600px;
 }
-.container-fluid{
- display: inline-block;
- }
- .soloQueue{
- display: inline-block;
- }
- .flexQueue{
-	 display: inline-block;
- 	width: 300px;
- }
- .redteam{
- color:#e34040;
- }
- .blueteam{
- color:#40cae3;
- }
+
+.container-fluid {
+	display: inline-block;
+}
+
+.soloQueue {
+	border-radius: 20px;
+	background-color: #fd9da5;
+	border: #eb2e32 7px solid;
+	display: inline-block;
+}
+
+.flexQueue {
+	border-radius: 20px;
+	background-color: #ddbbff;
+	border: #8000ff 7px solid;
+	display: inline-block;
+	width: 300px;
+}
+
+.redteam a {
+	color: #e34040;
+}
+
+.blueteam a {
+	color: #40cae3;
+}
+
+.background {
+	background: rgb(93, 93, 93);
+	background: linear-gradient(0deg, rgba(93, 93, 93, 1) 0%,
+		rgba(10, 255, 252, 1) 100%);
+}
+
+.profileIconBackground {
+	border: 3px solid goldenrod;
+}
+
+.mostpicked {
+	border-radius: 20px;
+	background-color: #a3f771;
+	border: #38ad0c 7px solid;
+}
