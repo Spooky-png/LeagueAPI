@@ -30,13 +30,13 @@
 			<div class="championSearch">
 				<form id="championSearch" action="/champion{Name}">
 					<input type="text" name="Name" placeholder="Search a champion">
-					<button class="myButton" type="submit">Search</button>
+					<button class="myButton" type="submit">Search Champions</button>
 				</form>
 			</div>
 			<div class="summonerSearch">
 				<form id="summonerSearch" action="/summoner{Name}">
 					<input type="text" name="Name" placeholder="Search a summoner">
-					<button class="myButton" type="submit">Search</button>
+					<button class="myButton" type="submit">Search Summoners</button>
 				</form>
 			</div>
 		</div>

@@ -27,13 +27,16 @@
 .holdthebar {
 	width: 200px;
 }
+.progress-bar{
+	color: black;
+}
 
 .currentMatch {
 	display: inline-block;
 	border-radius: 20px;
 	background-color: #868686;
 	border: #343a40 7px solid;
-	width: 600px;
+	width: 650px;
 }
 
 .container-fluid {

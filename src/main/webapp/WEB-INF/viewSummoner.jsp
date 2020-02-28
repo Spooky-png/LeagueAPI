@@ -42,65 +42,65 @@
 				</h3>
 				<div class="mostpicked">
 					<p>Most Played Champs:</p>
-					<img style='height: 50px; width: 50px;' src="${champPic }"
+					<img style='height: 90px; width: 90px;' src="${champPic }"
 						alt="${champPic }">
 					<c:choose>
 						<c:when test="${championLevel == 4 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/b6/Champion_Mastery_Level_4_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041829"
-								alt="bloop">| ${masteryPoints }K </c:when>
+								alt="bloop">| ${masteryPoints } Mastery Points </c:when>
 						<c:when test="${championLevel == 5 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/9/96/Champion_Mastery_Level_5_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041512"
-								alt="bloop">| ${masteryPoints }K </c:when>
+								alt="bloop">| ${masteryPoints } Mastery Points </c:when>
 						<c:when test="${championLevel == 6 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/be/Champion_Mastery_Level_6_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041636"
-								alt="bloop">| ${masteryPoints }K </c:when>
+								alt="bloop">| ${masteryPoints } Mastery Points </c:when>
 						<c:when test="${championLevel == 7 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/7/7a/Champion_Mastery_Level_7_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041615"
-								alt="bloop">| ${masteryPoints }K </c:when>
+								alt="bloop">| ${masteryPoints } Mastery Points </c:when>
 					</c:choose>
-					<img style='height: 50px; width: 50px;' src="${champPic2 }"
+					<img style='height: 90px; width: 90px;' src="${champPic2 }"
 						alt="${champPic2 }">
 					<c:choose>
 						<c:when test="${championLevel2 == 4 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/b6/Champion_Mastery_Level_4_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041829"
-								alt="bloop">| ${masteryPoints2 }K </c:when>
+								alt="bloop">| ${masteryPoints2 } Mastery Points </c:when>
 						<c:when test="${championLevel2 == 5 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/9/96/Champion_Mastery_Level_5_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041512"
-								alt="bloop">| ${masteryPoints2 }K </c:when>
+								alt="bloop">| ${masteryPoints2 } Mastery Points </c:when>
 						<c:when test="${championLevel2 == 6 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/be/Champion_Mastery_Level_6_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041636"
-								alt="bloop">| ${masteryPoints2 }K </c:when>
+								alt="bloop">| ${masteryPoints2 } Mastery Points </c:when>
 						<c:when test="${championLevel2 == 7 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/7/7a/Champion_Mastery_Level_7_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041615"
-								alt="bloop">| ${masteryPoints2 }K </c:when>
+								alt="bloop">| ${masteryPoints2 } Mastery Points </c:when>
 					</c:choose>
-					<img style='height: 50px; width: 50px;' src="${champPic3 }"
+					<img style='height: 90px; width: 90px;' src="${champPic3 }"
 						alt="${champPic3}">
 					<c:choose>
 						<c:when test="${championLevel3 == 4 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/b6/Champion_Mastery_Level_4_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041829"
-								alt="bloop">| ${masteryPoints3 }K </c:when>
+								alt="bloop">| ${masteryPoints3 } Mastery Points </c:when>
 						<c:when test="${championLevel3 == 5 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/9/96/Champion_Mastery_Level_5_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041512"
-								alt="bloop">| ${masteryPoints3 }K </c:when>
+								alt="bloop">| ${masteryPoints3 } Mastery Points </c:when>
 						<c:when test="${championLevel3 == 6 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/be/Champion_Mastery_Level_6_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041636"
-								alt="bloop">| ${masteryPoints3 }K </c:when>
+								alt="bloop">| ${masteryPoints3 } Mastery Points </c:when>
 						<c:when test="${championLevel3 == 7 }">
 							<img
 								src="https://vignette.wikia.nocookie.net/leagueoflegends/images/7/7a/Champion_Mastery_Level_7_Flair.png/revision/latest/scale-to-width-down/120?cb=20200113041615"
-								alt="bloop">| ${masteryPoints3 }K </c:when>
+								alt="bloop">| ${masteryPoints3 } Mastery Points </c:when>
 					</c:choose>
 				</div>
 			</div>
@@ -261,8 +261,8 @@
 					<p>${notingame }</p>
 				</c:when>
 				<c:otherwise>
-					<h5>${matchType }match | Match Start: ${gameStart } | Match
-						Length: ${gameMinutes }:${gameSeconds }</h5>
+					<h5>${matchType } MATCH | MATCH START: ${gameStart } | MATCH
+						LENGTH: ${gameMinutes }:${gameSeconds }</h5>
 					<table class="table table-hover table-dark table-sm">
 						<thead>
 							<tr>
@@ -275,46 +275,46 @@
 								<td class="blueteam"><img
 									style='height: 50px; width: 50px;' src="${participant1Champ}"
 									alt="${participant1Champ}"><a
-									href="/summoner?Name=${participant1Name}">${participant1Name }</a></td>
+									href="/summonerId?Id=${participant1Id}">${participant1Name }</a></td>
 								<td class="redteam"><img style='height: 50px; width: 50px;'
 									src="${participant6Champ}" alt="${participant6Champ}"><a
-									href="/summoner?Name=${participant6Name}">${participant6Name }</a></td>
+									href="/summonerId?Id=${participant6Id}">${participant6Name }</a></td>
 							</tr>
 							<tr>
 								<td class="blueteam"><img
 									style='height: 50px; width: 50px;' src="${participant2Champ}"
 									alt="${participant2Champ}"><a
-									href="/summoner?Name=${participant2Name}">${participant2Name }</a></td>
+									href="/summonerId?Id=${participant2Id}">${participant2Name }</a></td>
 								<td class="redteam"><img style='height: 50px; width: 50px;'
 									src="${participant7Champ}" alt="${participant7Champ}"><a
-									href="/summoner?Name=${participant7Name}">${participant7Name }</a></td>
+									href="/summonerId?Id=${participant7Id}">${participant7Name }</a></td>
 							</tr>
 							<tr>
 								<td class="blueteam"><img
 									style='height: 50px; width: 50px;' src="${participant3Champ}"
 									alt="${participant3Champ}"><a
-									href="/summoner?Name=${participant3Name}">${participant3Name }</a></td>
+									href="/summonerId?Id=${participant3Id}">${participant3Name }</a></td>
 								<td class="redteam"><img style='height: 50px; width: 50px;'
 									src="${participant8Champ}" alt="${participant8Champ}"><a
-									href="/summoner?Name=${participant8Name}">${participant8Name }</a></td>
+									href="/summonerId?Id=${participant8Id}">${participant8Name }</a></td>
 							</tr>
 							<tr>
 								<td class="blueteam"><img
 									style='height: 50px; width: 50px;' src="${participant4Champ}"
 									alt="${participant4Champ}"><a
-									href="/summoner?Name=${participant4Name}">${participant4Name }</a></td>
+									href="/summonerId?Id=${participant4Id}"">${participant4Name }</a></td>
 								<td class="redteam"><img style='height: 50px; width: 50px;'
 									src="${participant9Champ}" alt="${participant9Champ}"><a
-									href="/summoner?Name=${participant9Name}">${participant9Name }</a></td>
+									href="/summonerId?Id=${participant9Id}">${participant9Name }</a></td>
 							</tr>
 							<tr>
 								<td class="blueteam"><img
 									style='height: 50px; width: 50px;' src="${participant5Champ}"
 									alt="${participant5Champ}"><a
-									href="/summoner?Name=${participant5Name}">${participant5Name }</a></td>
+									href="/summonerId?Id=${participant5Id}">${participant5Name }</a></td>
 								<td class="redteam"><img style='height: 50px; width: 50px;'
 									src="${participant10Champ}" alt="${participant10Champ}"><a
-									href="/summoner?Name=${participant10Name}">${participant10Name }</a></td>
+									href="/summonerId?Id=${participant10Id}">${participant10Name }</a></td>
 							</tr>
 						</tbody>
 					</table>
