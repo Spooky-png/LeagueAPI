@@ -32,7 +32,7 @@ public class LeagueController {
 		try {
 			String url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 			String Origin = "https://developer.riotgames.com";
-			String token = "KEEEEEEEEEY";
+			String token = "KEEEEEY";
 			String language = "en-US,en;q=0.9";
 			String s = Name;
 
@@ -294,7 +294,7 @@ public class LeagueController {
 		try {
 			String url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/";
 			String Origin = "https://developer.riotgames.com";
-			String token = "KEEEEEEEEEY";
+			String token = "KEEEEEY";
 			String language = "en-US,en;q=0.9";
 			String s = Id;
 
